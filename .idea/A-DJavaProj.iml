@@ -6,5 +6,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="commons-lang3-3.11-javadoc" level="application" />
+    <orderEntry type="library" name="commons-lang3-3.11-javadoc" level="project" />
   </component>
 </module>
