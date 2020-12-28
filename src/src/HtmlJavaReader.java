@@ -1,18 +1,13 @@
 // converts a provided string webpage into text format and outputs it into the command line
+import java.io.IOException;
+import java.net.URL;
 import java.util.Scanner;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-public class HtmlJavaReader {
-    public static void main(String args[]) throws Exception{
-        //Creating a HttpClient object
-        CloseableHttpClient httpclient = HttpClients.createDefault();
-        //Creating a HttpGet object
-        HttpGet httpget = new HttpGet("http://www.something.com/");
-        //Executing the Get request
-        HttpResponse httpresponse = httpclient.execute(httpget);
-        Scanner sc = new Scanner(httpresponse.getEntity().getContent());
+public class HtmlJavaReader{
+    public static void main(String args[]) throws IOException {
+        //Instantiating the URL class
+        URL url = new URL("http://www.something.com/");
+        //Retrieving the contents of the specified page
+        Scanner sc = new Scanner(url.openStream());
         //Instantiating the StringBuffer class to hold the result
         StringBuffer sb = new StringBuffer();
         while(sc.hasNext()) {
